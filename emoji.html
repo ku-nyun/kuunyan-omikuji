@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>くーにゅん絵文字おみくじ</title>
+  <meta property="og:title" content="くーにゅん絵文字おみくじ">
+  <meta property="og:description" content="あなたに選ばれたくーにゅんの絵文字はこれ！">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1 { color: #7b44d4; }
+    .result-label { color: #7b44d4; }
+    .btn-main {
+      background: linear-gradient(135deg, #7b44d4, #a370f7);
+      box-shadow: 0 4px 15px rgba(123, 68, 212, 0.4);
+    }
+    .btn-main:not(:disabled):hover {
+      box-shadow: 0 6px 20px rgba(123, 68, 212, 0.5);
+    }
+    .choice-btn.selected { background: #7b44d4; border-color: #7b44d4; }
+    .question-box { box-shadow: 0 4px 20px rgba(123, 68, 212, 0.1); }
+    .stamp-card { box-shadow: 0 8px 30px rgba(123, 68, 212, 0.15); }
+    .btn-retry { border-color: #7b44d4; color: #7b44d4; }
+    .btn-retry:hover { background: #7b44d4; color: white; }
+    body { background: linear-gradient(135deg, #f3f0ff 0%, #ebe4ff 50%, #fff5e0 100%); }
+    .side-left .side-track { animation-name: scroll-down; }
+    .side-right .side-track { animation-name: scroll-up; }
+    .nav-link { display: block; text-align: center; margin-top: 12px; font-size: 13px; color: #999; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== トップ画面 ===== -->
+  <div id="screen-top" class="screen active">
+    <div class="bottom-strip" id="strip-top">
+      <div class="bottom-track track-rtl" id="track-top"></div>
+    </div>
+    <div class="container">
+      <div class="logo"><img src="download.png" alt="くーにゅん" class="logo-img"></div>
+      <h1>くーにゅん<br>絵文字おみくじ</h1>
+      <p class="subtitle">今日のあなたに選ばれた絵文字を占います</p>
+
+      <div class="question-box">
+        <p class="question-label">Q. 今の気分は？</p>
+        <div class="choices">
+          <button class="choice-btn" data-value="0">😴 ねむい</button>
+          <button class="choice-btn" data-value="1">😊 ふつう</button>
+          <button class="choice-btn" data-value="2">🔥 元気</button>
+          <button class="choice-btn" data-value="3">🌀 よくわからん</button>
+        </div>
+      </div>
+
+      <button id="btn-omikuji" class="btn-main" disabled>
+        おみくじを引く！
+      </button>
+
+      <p class="note">※ くーにゅん作のLINE絵文字 約700種類の中からランダムに選びます</p>
+      <a href="index.html" class="btn-nav">← スタンプおみくじはこちら</a>
+    </div>
+    <div class="bottom-strip" id="bottom-strip">
+      <div class="bottom-track track-ltr" id="track-bottom"></div>
+    </div>
+  </div>
+
+  <!-- ===== ローディング画面 ===== -->
+  <div id="screen-loading" class="screen">
+    <div class="container">
+      <div class="loading-animation"><img src="download.png" alt="くーにゅん" class="logo-img"></div>
+      <p class="loading-text">あなたの絵文字を<br>選んでいます…</p>
+    </div>
+  </div>
+
+  <!-- ===== 結果画面 ===== -->
+  <div id="screen-result" class="screen">
+    <div class="container">
+      <p class="result-label">✨ あなたに選ばれた絵文字 ✨</p>
+
+      <div class="stamp-card">
+        <img id="result-img" src="" alt="絵文字画像">
+        <p id="result-name" class="stamp-name"></p>
+      </div>
+
+      <a id="result-link" href="#" target="_blank" class="btn-store">
+        LINEストアで見る →
+      </a>
+
+      <div class="share-area">
+        <p class="share-label">シェアする</p>
+        <div class="share-buttons">
+          <button id="btn-x" class="btn-share btn-x">𝕏 でシェア</button>
+          <button id="btn-line" class="btn-share btn-line">LINE でシェア</button>
+          <button id="btn-copy" class="btn-share btn-copy">🔗 URLをコピー</button>
+        </div>
+      </div>
+
+      <button id="btn-retry" class="btn-retry">もう一回引く</button>
+      <a href="index.html" class="btn-nav">← スタンプおみくじはこちら</a>
+    </div>
+  </div>
+
+  <div class="side-column side-left" id="side-left">
+    <div class="side-track" id="track-left"></div>
+  </div>
+  <div class="side-column side-right" id="side-right">
+    <div class="side-track" id="track-right"></div>
+  </div>
+
+  <script>
+    const STORE_BASE = "https://store.line.me/emojishop/product";
+    const IMG_BASE = "https://stickershop.line-scdn.net/sticonshop/v1/product";
+    const STAMP_IMG_BASE = "https://stickershop.line-scdn.net/stickershop/v1/product";
+
+    let stamps = [];
+    let selectedMood = null;
+
+    async function loadStamps() {
+      try {
+        const res = await fetch("data/emoji.json");
+        const json = await res.json();
+        stamps = json.stamps || [];
+      } catch {
+        stamps = [{ id: "6a1d22d571f5f26c68e873ee", name: "ピットブル 実写" }];
+      }
+    }
+
+    function getStampFromUrl() {
+      return new URLSearchParams(location.search).get("stamp");
+    }
+
+    function pickRandom() {
+      return stamps[Math.floor(Math.random() * stamps.length)];
+    }
+
+    function showResult(stamp) {
+      const imgEl = document.getElementById("result-img");
+      const nameEl = document.getElementById("result-name");
+      const linkEl = document.getElementById("result-link");
+
+      imgEl.src = `${IMG_BASE}/${stamp.id}/iPhone/main.png`;
+      nameEl.textContent = stamp.name || `絵文字 #${stamp.id.slice(0, 8)}`;
+      linkEl.href = `${STORE_BASE}/${stamp.id}/ja`;
+
+      const resultUrl = `${location.origin}${location.pathname}?stamp=${stamp.id}`;
+
+      document.getElementById("btn-x").onclick = () => {
+        const text = encodeURIComponent(`あなたに選ばれたくーにゅんの絵文字はこれ！ ${resultUrl}`);
+        window.open(`https://x.com/intent/tweet?text=${text}`, "_blank");
+      };
+      document.getElementById("btn-line").onclick = () => {
+        window.open(`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(resultUrl)}`, "_blank");
+      };
+      document.getElementById("btn-copy").onclick = () => {
+        navigator.clipboard.writeText(resultUrl).then(() => {
+          const btn = document.getElementById("btn-copy");
+          btn.textContent = "✅ コピーしました！";
+          btn.classList.add("copied");
+          setTimeout(() => { btn.textContent = "🔗 URLをコピー"; btn.classList.remove("copied"); }, 2000);
+        });
+      };
+
+      showScreen("result");
+    }
+
+    function showScreen(name) {
+      document.querySelectorAll(".screen").forEach(el => el.classList.remove("active"));
+      document.getElementById(`screen-${name}`).classList.add("active");
+    }
+
+    function drawOmikuji() {
+      showScreen("loading");
+      setTimeout(() => {
+        const stamp = pickRandom();
+        history.pushState({}, "", `?stamp=${stamp.id}`);
+        showResult(stamp);
+      }, 1800);
+    }
+
+    function buildSideColumns() {
+      if (stamps.length === 0) return;
+      const shuffled = [...stamps].sort(() => Math.random() - 0.5).slice(0, 30);
+
+      ["track-left", "track-right"].forEach(id => {
+        const track = document.getElementById(id);
+        [...shuffled, ...shuffled].forEach(s => {
+          const a = document.createElement("a");
+          a.href = `${STORE_BASE}/${s.id}/ja`;
+          a.target = "_blank";
+          const img = document.createElement("img");
+          img.src = `${IMG_BASE}/${s.id}/iPhone/main.png`;
+          img.alt = s.name;
+          img.className = "side-stamp-img";
+          img.onerror = () => { a.style.display = "none"; };
+          a.appendChild(img);
+          track.appendChild(a);
+        });
+      });
+
+      ["track-top", "track-bottom"].forEach(id => {
+        const track = document.getElementById(id);
+        if (!track) return;
+        const picked = [...stamps].sort(() => Math.random() - 0.5).slice(0, 20);
+        [...picked, ...picked].forEach(s => {
+          const a = document.createElement("a");
+          a.href = `${STORE_BASE}/${s.id}/ja`;
+          a.target = "_blank";
+          const img = document.createElement("img");
+          img.src = `${IMG_BASE}/${s.id}/iPhone/main.png`;
+          img.alt = s.name;
+          img.className = "bottom-stamp-img";
+          img.onerror = () => { a.style.display = "none"; };
+          a.appendChild(img);
+          track.appendChild(a);
+        });
+      });
+    }
+
+    async function init() {
+      await loadStamps();
+      buildSideColumns();
+
+      document.querySelectorAll(".choice-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".choice-btn").forEach(b => b.classList.remove("selected"));
+          btn.classList.add("selected");
+          selectedMood = btn.dataset.value;
+          document.getElementById("btn-omikuji").disabled = false;
+        });
+      });
+
+      document.getElementById("btn-omikuji").addEventListener("click", drawOmikuji);
+
+      document.getElementById("btn-retry").addEventListener("click", () => {
+        document.querySelectorAll(".choice-btn").forEach(b => b.classList.remove("selected"));
+        selectedMood = null;
+        document.getElementById("btn-omikuji").disabled = true;
+        history.pushState({}, "", location.pathname);
+        showScreen("top");
+      });
+
+      const stampId = getStampFromUrl();
+      if (stampId) {
+        const stamp = stamps.find(s => s.id === stampId) || { id: stampId, name: "" };
+        showResult(stamp);
+      } else {
+        showScreen("top");
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

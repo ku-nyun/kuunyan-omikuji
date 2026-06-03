@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>くーにゅんスタンプおみくじ</title>
+
+  <!-- シェア用OGPタグ（結果URLで上書きされる） -->
+  <meta property="og:title" content="くーにゅんスタンプおみくじ">
+  <meta property="og:description" content="あなたに選ばれたくーにゅんのスタンプはこれ！">
+  <meta property="og:image" content="https://stickershop.line-scdn.net/stickershop/v1/product/34236142/LINEStorePC/main.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== トップ画面 ===== -->
+  <div id="screen-top" class="screen active">
+    <div class="bottom-strip" id="strip-top">
+      <div class="bottom-track track-rtl" id="track-top"></div>
+    </div>
+    <div class="container">
+      <div class="logo"><img src="download.png" alt="くーにゅん" class="logo-img"></div>
+      <h1>くーにゅん<br>スタンプおみくじ</h1>
+      <p class="subtitle">今日のあなたに選ばれたスタンプを占います</p>
+
+      <div class="question-box">
+        <p class="question-label">Q. 今の気分は？</p>
+        <div class="choices">
+          <button class="choice-btn" data-value="0">😴 ねむい</button>
+          <button class="choice-btn" data-value="1">😊 ふつう</button>
+          <button class="choice-btn" data-value="2">🔥 元気</button>
+          <button class="choice-btn" data-value="3">🌀 よくわからん</button>
+        </div>
+      </div>
+
+      <button id="btn-omikuji" class="btn-main" disabled>
+        おみくじを引く！
+      </button>
+
+      <p class="note">※ くーにゅん作のLINEスタンプ 約1,900種類の中からランダムに選びます</p>
+      <a href="emoji.html" class="btn-nav">絵文字おみくじはこちら →</a>
+    </div>
+    <div class="bottom-strip" id="bottom-strip">
+      <div class="bottom-track track-ltr" id="track-bottom"></div>
+    </div>
+  </div>
+
+  <!-- ===== ローディング画面 ===== -->
+  <div id="screen-loading" class="screen">
+    <div class="container">
+      <div class="loading-animation"><img src="download.png" alt="くーにゅん" class="logo-img"></div>
+      <p class="loading-text">あなたのスタンプを<br>選んでいます…</p>
+    </div>
+  </div>
+
+  <!-- ===== 結果画面 ===== -->
+  <div id="screen-result" class="screen">
+    <div class="container">
+      <p class="result-label">✨ あなたに選ばれたスタンプ ✨</p>
+
+      <div class="stamp-card">
+        <img id="result-img" src="" alt="スタンプ画像">
+        <p id="result-name" class="stamp-name"></p>
+      </div>
+
+      <a id="result-link" href="#" target="_blank" class="btn-store">
+        LINEストアで見る →
+      </a>
+
+      <div class="share-area">
+        <p class="share-label">シェアする</p>
+        <div class="share-buttons">
+          <button id="btn-x" class="btn-share btn-x">𝕏 でシェア</button>
+          <button id="btn-line" class="btn-share btn-line">LINE でシェア</button>
+          <button id="btn-copy" class="btn-share btn-copy">🔗 URLをコピー</button>
+        </div>
+      </div>
+
+      <button id="btn-retry" class="btn-retry">もう一回引く</button>
+    </div>
+  </div>
+
+  <!-- 左右流れるスタンプ装飾 -->
+  <div class="side-column side-left" id="side-left">
+    <div class="side-track" id="track-left"></div>
+  </div>
+  <div class="side-column side-right" id="side-right">
+    <div class="side-track" id="track-right"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
