@@ -8,22 +8,24 @@
   <!-- シェア用OGPタグ（結果URLで上書きされる） -->
   <meta property="og:title" content="くーにゅんスタンプおみくじ">
   <meta property="og:description" content="あなたに選ばれたくーにゅんのスタンプはこれ！">
-  <meta property="og:image" content="https://stickershop.line-scdn.net/stickershop/v1/product/34236142/LINEStorePC/main.png">
+  <meta property="og:image" content="https://kuunyan-omikuji.vercel.app/download.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- ===== トップ画面 ===== -->
   <div id="screen-top" class="screen active">
     <div class="bottom-strip" id="strip-top">
       <div class="bottom-track track-rtl" id="track-top"></div>
     </div>
     <div class="container">
-      <div class="logo"><img src="download.png" alt="くーにゅん" class="logo-img"></div>
+      <div class="logo-wrap">
+        <a href="library.html" class="back-to-lab">図書館<br><span class="back-arrow">↩︎</span></a>
+        <div class="logo"><img src="download.png" alt="くーにゅん" class="logo-img"></div>
+      </div>
       <h1>くーにゅん<br>スタンプおみくじ</h1>
-      <p class="subtitle">今日のあなたに選ばれたスタンプを占います</p>
+      <p class="subtitle">今日のあなたの気分に、ぴったりのスタンプを占います</p>
 
       <div class="question-box">
         <p class="question-label">Q. 今の気分は？</p>
@@ -39,7 +41,7 @@
         おみくじを引く！
       </button>
 
-      <p class="note">※ くーにゅん作のLINEスタンプ 約1,900種類の中からランダムに選びます</p>
+      <p class="note">※ くーにゅん作のLINEスタンプ 約1,200種類の中からランダムに選びます</p>
       <a href="emoji.html" class="btn-nav">絵文字おみくじはこちら →</a>
     </div>
     <div class="bottom-strip" id="bottom-strip">
