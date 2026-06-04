@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>くーにゅん研究所 図書館</title>
+  <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <div class="logo-bubble-wrap">
+          <img src="download.png" alt="くーにゅん" id="hato-btn" class="hato-btn">
+          <div class="hato-balloon" id="hato-balloon">
+            <div class="balloon-arrow"></div>
+            <div class="balloon-content">
+              <p>くーにゅんは、新進気鋭のLINEスタンプクリエイターだよ。<br>「かわいい」よりも「シュール」なスタンプを作りがちだよ。</p>
+              <p>鳩が好きだよ。飼ってたこともあるよ。</p>
+              <p>元ツイッタラーだよ。アンチが沸いたからビビってやめたよ。</p>
+              <p>意外と東京藝大卒だよ。言いたいだけだよ。</p>
+              <p>スタンプ作るのが大好きすぎて、ほんと止まんないよ。これからもよろしくね！</p>
+              <p>Twitterではもっと話してるから、見てみてね。→<a href="https://x.com/quttan4444?s=21" target="_blank">@quttan4444</a></p>
+            </div>
+          </div>
+        </div>
+        <span>くーにゅん図書館</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html">スタンプおみくじ</a>
+        <a href="emoji.html">絵文字おみくじ</a>
+        <a href="library.html" class="active">📚 図書館</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- タイトル -->
+    <div class="library-title">
+      <h1>📚 くーにゅん図書館</h1>
+      <p>全 <span id="total-count">-</span> 件のアーカイブ</p>
+    </div>
+
+    <!-- 検索バー -->
+    <div class="search-area">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="マヌルネコ、実写、パンダ…">
+        <button id="search-clear" class="search-clear">✕</button>
+      </div>
+    </div>
+
+    <!-- フィルター -->
+    <div class="filter-area">
+      <button class="filter-btn active" data-type="all">すべて</button>
+      <button class="filter-btn" data-type="stamp">🎭 スタンプ</button>
+      <button class="filter-btn" data-type="emoji">✨ 絵文字</button>
+      <button class="filter-btn" data-type="theme">👘 着せかえ</button>
+    </div>
+
+    <!-- あいうえおインデックス -->
+    <div class="aiueo-area" id="aiueo-area">
+      <div class="aiueo-row">
+        <span class="aiueo-label">行</span>
+        <button class="aiueo-btn" data-kana="あ">あ</button>
+        <button class="aiueo-btn" data-kana="か">か</button>
+        <button class="aiueo-btn" data-kana="さ">さ</button>
+        <button class="aiueo-btn" data-kana="た">た</button>
+        <button class="aiueo-btn" data-kana="な">な</button>
+        <button class="aiueo-btn" data-kana="は">は</button>
+        <button class="aiueo-btn" data-kana="ま">ま</button>
+        <button class="aiueo-btn" data-kana="や">や</button>
+        <button class="aiueo-btn" data-kana="ら">ら</button>
+        <button class="aiueo-btn" data-kana="わ">わ</button>
+        <button class="aiueo-btn" data-kana="A">A-Z</button>
+        <button class="aiueo-btn aiueo-clear" data-kana="">全部</button>
+      </div>
+    </div>
+
+    <!-- ランダムPickUp -->
+    <div class="pickup-area" id="pickup-area">
+      <h2 class="section-title">🎲 今日のPickUp</h2>
+      <div class="grid" id="pickup-grid"></div>
+    </div>
+
+    <!-- 検索結果 -->
+    <div class="results-area" id="results-area" style="display:none">
+      <h2 class="section-title" id="results-title">検索結果</h2>
+      <div class="grid" id="results-grid"></div>
+      <button class="btn-more" id="btn-more" style="display:none">もっと見る</button>
+    </div>
+
+    <!-- 全件表示 -->
+    <div class="all-area" id="all-area">
+      <h2 class="section-title" id="all-title">すべての作品</h2>
+      <div class="grid" id="all-grid"></div>
+      <button class="btn-more" id="btn-more-all">もっと見る</button>
+    </div>
+
+  </main>
+
+  <script src="library.js"></script>
+</body>
+</html>
