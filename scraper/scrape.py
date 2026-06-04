@@ -16,10 +16,13 @@ SSL_CONTEXT.check_hostname = False
 SSL_CONTEXT.verify_mode = ssl.CERT_NONE
 
 AUTHOR_ID = "5607562"
+THEME_AUTHOR_ID = "10835258"
 BASE_URL = f"https://store.line.me/stickershop/author/{AUTHOR_ID}/ja"
 EMOJI_URL = f"https://store.line.me/stickershop/author/{AUTHOR_ID}/ja?category=emoji"
+THEME_URL = f"https://store.line.me/themeshop/author/{THEME_AUTHOR_ID}/ja"
 OUTPUT_PATH = Path(__file__).parent.parent / "data" / "stamps.json"
 EMOJI_OUTPUT_PATH = Path(__file__).parent.parent / "data" / "emoji.json"
+THEME_OUTPUT_PATH = Path(__file__).parent.parent / "data" / "themes.json"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -47,7 +50,7 @@ def parse_products(html: str, product_type: str = "stamp") -> list[dict]:
             if product_id not in seen:
                 seen.add(product_id)
                 products.append({"id": product_id, "name": name.strip()})
-    else:
+    elif product_type == "emoji":
         # 絵文字: 16進数ID
         pattern = re.findall(
             r'href="/emojishop/product/([0-9a-f]{24})/ja"[^>]*>.*?alt="([^"]+)"',
@@ -58,6 +61,18 @@ def parse_products(html: str, product_type: str = "stamp") -> list[dict]:
             if product_id not in seen:
                 seen.add(product_id)
                 products.append({"id": product_id, "name": name.strip()})
+    else:
+        # 着せかえ: UUID形式、画像URLも一緒に取得
+        # <a href="/themeshop/product/UUID/ja"> ... <img alt="名前" src="...">
+        pattern = re.findall(
+            r'href="/themeshop/product/([0-9a-f-]{36})/ja".*?alt="([^"]+)".*?src="(https://shop\.line-scdn\.net/themeshop/[^"]+)"',
+            html, re.DOTALL,
+        )
+        seen = set()
+        for product_id, name, img_url in pattern:
+            if product_id not in seen:
+                seen.add(product_id)
+                products.append({"id": product_id, "name": name.strip(), "img": img_url})
 
     return products
 
@@ -131,6 +146,12 @@ def main():
     # 絵文字
     emoji = dedupe(scrape_all(EMOJI_URL, "絵文字", product_type="emoji"))
     save(emoji, EMOJI_OUTPUT_PATH, "stamps")
+
+    print()
+
+    # 着せかえ
+    themes = dedupe(scrape_all(THEME_URL, "着せかえ", product_type="theme"))
+    save(themes, THEME_OUTPUT_PATH, "stamps")
 
 
 if __name__ == "__main__":
