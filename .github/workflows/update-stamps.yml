@@ -19,12 +19,17 @@ jobs:
           python-version: "3.12"
 
       - name: スクレイピング実行
-        run: python scraper/scrape.py
+        run: |
+          python scraper/scrape.py
+          echo "✅ スクレイピング完了"
+          echo "stamps.json 件数: $(python -c "import json; d=json.load(open('data/stamps.json')); print(d['count'])")"
+          echo "emoji.json 件数: $(python -c "import json; d=json.load(open('data/emoji.json')); print(d['count'])")"
+          echo "themes.json 件数: $(python -c "import json; d=json.load(open('data/themes.json')); print(d['count'])")"
 
       - name: 変更があればコミット＆プッシュ
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/stamps.json
-          git diff --staged --quiet || git commit -m "🎴 スタンプリストを自動更新 $(date '+%Y-%m-%d')"
+          git add data/stamps.json data/emoji.json data/themes.json
+          git diff --staged --quiet || git commit -m "🎴 スタンプ・絵文字・着せかえリストを自動更新 $(date '+%Y-%m-%d')"
           git push

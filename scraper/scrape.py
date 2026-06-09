@@ -10,10 +10,13 @@ from datetime import date
 from pathlib import Path
 import urllib.request
 
-# macOS の SSL 証明書エラー対策
-SSL_CONTEXT = ssl.create_default_context()
-SSL_CONTEXT.check_hostname = False
-SSL_CONTEXT.verify_mode = ssl.CERT_NONE
+# SSL コンテキスト（macOS・Linux両対応）
+try:
+    SSL_CONTEXT = ssl.create_default_context()
+    SSL_CONTEXT.check_hostname = False
+    SSL_CONTEXT.verify_mode = ssl.CERT_NONE
+except Exception:
+    SSL_CONTEXT = None
 
 AUTHOR_ID = "5607562"
 THEME_AUTHOR_ID = "10835258"
@@ -32,7 +35,10 @@ HEADERS = {
 
 def fetch_page(url: str) -> str:
     req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=15, context=SSL_CONTEXT) as res:
+    kwargs = {"timeout": 15}
+    if SSL_CONTEXT is not None:
+        kwargs["context"] = SSL_CONTEXT
+    with urllib.request.urlopen(req, **kwargs) as res:
         return res.read().decode("utf-8")
 
 
