@@ -1,254 +1,286 @@
 {
-  "updated": "2026-09-27",
-  "count": 62,
+  "updated": "2026-10-04",
+  "count": 70,
   "stamps": [
     {
-      "id": "6ab61a069873e30db180bbaf",
-      "name": "【ミックス】しば犬"
+      "id": "6abf5b966421ee0fc62f08b6",
+      "name": "【ふわふわ】シマエナガ"
     },
     {
-      "id": "6ab619d7c427d714c65b6be6",
-      "name": "【ふわふわ】しば犬"
+      "id": "6abf5b8f9873e30db180d4cb",
+      "name": "【ガビガビ】シマエナガ"
     },
     {
-      "id": "6ab619d86421ee0fc62ef023",
-      "name": "【セピア】しば犬"
+      "id": "6abf5b5a351ef75626dbb1d4",
+      "name": "【ミックス】シマエナガ"
     },
     {
-      "id": "6ab619e0673fb171f3d47f86",
-      "name": "【低画質】しば犬"
+      "id": "6abe08236421ee0fc62f0510",
+      "name": "源氏香　１　パステル紫"
     },
     {
-      "id": "6ab619da351ef75626dbacdb",
-      "name": "【モノクロ】しば犬"
+      "id": "6abe07d4673fb171f3d483a8",
+      "name": "源氏香　１　墨"
     },
     {
-      "id": "6ab612db9873e30db180bb4b",
-      "name": "【セピア】エダマメ"
+      "id": "6abe07db351ef75626dbb134",
+      "name": "源氏香　１　海松"
     },
     {
-      "id": "6ab61a03351ef75626dbace1",
-      "name": "【ふわふわ】エダマメ"
+      "id": "6abe0807673fb171f3d483ab",
+      "name": "源氏香　１　桜"
     },
     {
-      "id": "6ab61a1ec427d714c65b6be9",
-      "name": "【ミックス】エダマメ"
+      "id": "6abe07fdc427d714c65b7007",
+      "name": "源氏香　１　白フチ黒"
     },
     {
-      "id": "6ab619ee1be7601e827cce19",
-      "name": "【低画質】エダマメ"
+      "id": "6abe0848673fb171f3d483b0",
+      "name": "源氏香　１　朱!!!!!!!!!"
     },
     {
-      "id": "6ab612d61be7601e827ccdbc",
-      "name": "【虹色】エダマメ"
+      "id": "6abe1360673fb171f3d483bc",
+      "name": "源氏香　１　若草"
     },
     {
-      "id": "6ab6108d1be7601e827ccd88",
-      "name": "【モノクロ】エダマメ"
+      "id": "6abe138e673fb171f3d483c1",
+      "name": "源氏香　１　茜"
     },
     {
-      "id": "6ab610b3c427d714c65b6bd8",
-      "name": "【ふわふわ】ムチムチ黒猫"
+      "id": "6abe1366673fb171f3d483bd",
+      "name": "源氏香　１　虹（横）"
     },
     {
-      "id": "6ab612d56421ee0fc62eefbc",
-      "name": "【ミックス】ムチムチ黒猫"
+      "id": "6abe1a26c427d714c65b7037",
+      "name": "源氏香　１　虹（縦）"
     },
     {
-      "id": "6ab610926421ee0fc62eef97",
-      "name": "【セピア】ムチムチ黒猫"
+      "id": "6abe1a43351ef75626dbb164",
+      "name": "源氏香　１　金"
     },
     {
-      "id": "6ab612e0673fb171f3d47f82",
-      "name": "【低画質】ムチムチ黒猫"
+      "id": "6abe1a229873e30db180d21b",
+      "name": "源氏香　１　銀"
     },
     {
-      "id": "6ab61098351ef75626dbacd0",
-      "name": "【モノクロ】ムチムチ黒猫"
+      "id": "6abe1a31673fb171f3d483d5",
+      "name": "源氏香　１　青紫グラデ"
     },
     {
-      "id": "6ab610a46421ee0fc62eef9a",
-      "name": "【虹色】ムチムチ黒猫"
+      "id": "6abe1a1c351ef75626dbb161",
+      "name": "源氏香　２　パステル紫"
     },
     {
-      "id": "6ab610be6421ee0fc62eefa8",
-      "name": "【ミックス】ツインテールインコ"
+      "id": "6abe1a1e6421ee0fc62f0605",
+      "name": "源氏香　１　藍!!!!!!!!!"
     },
     {
-      "id": "6ab6109b6421ee0fc62eef99",
-      "name": "【セピア】ツインテールインコ"
+      "id": "6abe1a1dc427d714c65b7034",
+      "name": "源氏香　２　墨"
     },
     {
-      "id": "6ab610ab9873e30db180bb27",
-      "name": "【ふわふわ】ツインテールインコ"
+      "id": "6abe1a35673fb171f3d483d6",
+      "name": "源氏香　２　白フチ黒"
     },
     {
-      "id": "6ab610a4c427d714c65b6bd5",
-      "name": "【モノクロ】ツインテールインコ"
+      "id": "6abe1a256421ee0fc62f0606",
+      "name": "源氏香　２　海松"
     },
     {
-      "id": "6ab610a81be7601e827ccd8f",
-      "name": "【低画質】ツインテールインコ"
+      "id": "6abe1a419873e30db180d21e",
+      "name": "源氏香　２　若草"
     },
     {
-      "id": "6ab610a0351ef75626dbacd1",
-      "name": "【虹色】ツインテールインコ"
+      "id": "6abe1a276421ee0fc62f0608",
+      "name": "源氏香　２　白抜き（黒地）"
     },
     {
-      "id": "6ab610b06421ee0fc62eef9b",
-      "name": "【セピア】サモエド"
+      "id": "6abe1a39c427d714c65b703a",
+      "name": "源氏香　２　藍"
     },
     {
-      "id": "6ab610a71be7601e827ccd8e",
-      "name": "【ふわふわ】サモエド"
+      "id": "6abe1a29c427d714c65b7038",
+      "name": "源氏香　２　桜!!!!!!!!!"
     },
     {
-      "id": "6ab610b49873e30db180bb2e",
-      "name": "【ミックス】サモエド"
+      "id": "6abe1a2c1be7601e827ce40e",
+      "name": "源氏香　２　虹（縦）"
     },
     {
-      "id": "6ab610a8c427d714c65b6bd6",
-      "name": "【虹色】サモエド"
+      "id": "6abe1a276421ee0fc62f0607",
+      "name": "源氏香　２　虹（横）"
     },
     {
-      "id": "6ab610cb9873e30db180bb37",
-      "name": "【モノクロ】サモエド"
+      "id": "6abe1a35351ef75626dbb163",
+      "name": "源氏香　２　銀"
     },
     {
-      "id": "6ab610c91be7601e827ccda3",
-      "name": "【低画質】サモエド"
+      "id": "6abe1a306421ee0fc62f0609",
+      "name": "源氏香　２　青紫グラデ"
     },
     {
-      "id": "6ab62ccec427d714c65b6c29",
-      "name": "ネオン文字 手書き2"
+      "id": "6abe1a431be7601e827ce40f",
+      "name": "源氏香　２　金!!!!!!!!!"
     },
     {
-      "id": "6ab62cdf351ef75626dbad28",
-      "name": "ネオン文字 手書き3"
+      "id": "6abe1a59351ef75626dbb166",
+      "name": "カラフルふわっと 手書き2"
     },
     {
-      "id": "6ab62ce69873e30db180bcfa",
-      "name": "ネオン文字 教科書体2"
+      "id": "6abcaf45673fb171f3d4828c",
+      "name": "ネオン文字 デザイン1"
     },
     {
-      "id": "6ab62cdf1be7601e827ccf57",
-      "name": "ネオン文字 明朝1"
+      "id": "6abcaf9e673fb171f3d48296",
+      "name": "ネオン文字 デザイン3"
     },
     {
-      "id": "6ab62cd7c427d714c65b6c2a",
-      "name": "ネオン文字 教科書体1"
+      "id": "6abcaf776421ee0fc62efef2",
+      "name": "ネオン文字 デザイン4"
     },
     {
-      "id": "6ab62cf2c427d714c65b6c30",
-      "name": "ネオン文字 明朝3"
+      "id": "6abcaf6f673fb171f3d48291",
+      "name": "ネオン文字 デザイン5"
     },
     {
-      "id": "6ab62cdb351ef75626dbad27",
-      "name": "ネオン文字 明朝4"
+      "id": "6abcaf4a9873e30db180cabb",
+      "name": "ネオン文字 デザイン6"
     },
     {
-      "id": "6ab4791ac427d714c65b6af5",
-      "name": "ネオン文字 明朝5"
+      "id": "6abcaf6d1be7601e827cdd27",
+      "name": "ネオン文字 デザイン7"
     },
     {
-      "id": "6ab62cdec427d714c65b6c2b",
-      "name": "ネオン文字 明朝6"
+      "id": "6abcaf93c427d714c65b6ef4",
+      "name": "ネオン文字 手書き1"
     },
     {
-      "id": "6ab62cf19873e30db180bcfb",
-      "name": "ネオン文字 明朝9"
+      "id": "6abcafb91be7601e827cdd30",
+      "name": "まるふわ 文字3"
     },
     {
-      "id": "6ab62ce9673fb171f3d47fbd",
-      "name": "ネオン文字 明朝8"
+      "id": "6abcafa29873e30db180cac0",
+      "name": "まるふわ 文字1"
     },
     {
-      "id": "6ab62d17673fb171f3d47fc0",
-      "name": "ネオン文字 明朝7"
+      "id": "6abcaf9b1be7601e827cdd2d",
+      "name": "まるふわ 文字2"
     },
     {
-      "id": "6ab62cedc427d714c65b6c2e",
-      "name": "ネオン文字 明朝11"
+      "id": "6abcaf981be7601e827cdd2b",
+      "name": "まるふわ 文字4"
     },
     {
-      "id": "6ab62b35673fb171f3d47fb4",
-      "name": "ネオン文字 明朝10"
+      "id": "6abcb0019873e30db180caca",
+      "name": "まるふわ 文字5"
     },
     {
-      "id": "6ab62b16351ef75626dbad21",
-      "name": "ネオン文字 明朝12"
+      "id": "6abcafa41be7601e827cdd2e",
+      "name": "まるふわ 文字8"
     },
     {
-      "id": "6ab62d06673fb171f3d47fbe",
-      "name": "ネオン文字 明朝13"
+      "id": "6abcafbd9873e30db180cac2",
+      "name": "まるふわ 文字7"
     },
     {
-      "id": "6ab62d339873e30db180bd07",
-      "name": "ネオン文字 明朝14"
+      "id": "6abcafa7351ef75626dbb01f",
+      "name": "まるふわ 文字6"
     },
     {
-      "id": "6ab62b1c1be7601e827ccf2c",
-      "name": "ネオン文字 明朝15"
+      "id": "6abcafe1673fb171f3d48299",
+      "name": "まるふわ ゴシック2"
     },
     {
-      "id": "6ab62cf01be7601e827ccf5b",
-      "name": "ネオン文字 明朝16"
+      "id": "6abcafbb673fb171f3d48298",
+      "name": "まるふわ ゴシック3"
     },
     {
-      "id": "6ab62b12c427d714c65b6c1e",
-      "name": "ネオン文字 明朝17"
+      "id": "6abc5d18c427d714c65b6ec7",
+      "name": "グラデにじいろ文字 まる文字4"
     },
     {
-      "id": "6ab62cec6421ee0fc62ef190",
-      "name": "ネオン文字 明朝20"
+      "id": "6abcb0b41be7601e827cdd45",
+      "name": "虹色レトロ文字 ゴシック13"
     },
     {
-      "id": "6ab62b276421ee0fc62ef15e",
-      "name": "ネオン文字 明朝19"
+      "id": "6abb5de36421ee0fc62ef9d2",
+      "name": "まるふわ ゴシック21"
     },
     {
-      "id": "6ab62b219873e30db180bccb",
-      "name": "ネオン文字 明朝18"
+      "id": "6abb5de0351ef75626dbaf61",
+      "name": "まるふわ デザイン1"
     },
     {
-      "id": "6ab62cf3351ef75626dbad2a",
-      "name": "ネオン文字 明朝21"
+      "id": "6abb5dfcc427d714c65b6e54",
+      "name": "まるふわ デザイン2"
     },
     {
-      "id": "6ab62b101be7601e827ccf2b",
-      "name": "ネオン文字 明朝22"
+      "id": "6abb5de19873e30db180c55a",
+      "name": "まるふわ デザイン4"
     },
     {
-      "id": "6ab62b146421ee0fc62ef15b",
-      "name": "ネオン文字 筆1"
+      "id": "6abb5ecc6421ee0fc62ef9ec",
+      "name": "まるふわ デザイン5"
     },
     {
-      "id": "6ab62b1f6421ee0fc62ef15d",
-      "name": "ネオン文字 明朝23"
+      "id": "6abb5ed2351ef75626dbaf65",
+      "name": "まるふわ デザイン3"
     },
     {
-      "id": "6ab62b166421ee0fc62ef15c",
-      "name": "ネオン文字 筆2"
+      "id": "6abb5dea6421ee0fc62ef9d3",
+      "name": "まるふわ デザイン6"
     },
     {
-      "id": "6ab63397351ef75626dbad30",
-      "name": "ネオン文字 筆3"
+      "id": "6abb5dfc9873e30db180c55b",
+      "name": "まるふわ デザイン7"
     },
     {
-      "id": "6ab4e94ec427d714c65b6b9b",
-      "name": "グラデにじいろ文字 明朝8"
+      "id": "6abb5e0f1be7601e827cd7f6",
+      "name": "まるふわ 手書き2"
     },
     {
-      "id": "6ab378dc1be7601e827cc4d5",
-      "name": "【セピア】シマエナガ"
+      "id": "6abb5e171be7601e827cd7f7",
+      "name": "まるふわ 手書き1"
     },
     {
-      "id": "6ab24b41351ef75626dbab2a",
-      "name": "まるふわ 文字9"
+      "id": "6abb5e226421ee0fc62ef9d8",
+      "name": "まるふわ 手書き3"
     },
     {
-      "id": "6ab24b466421ee0fc62ee585",
-      "name": "まるふわ 文字10"
+      "id": "6abb5ee6673fb171f3d481ee",
+      "name": "まるふわ 教科書体1"
+    },
+    {
+      "id": "6abb5ef19873e30db180c57c",
+      "name": "まるふわ 明朝1"
+    },
+    {
+      "id": "6abb5f3f351ef75626dbaf66",
+      "name": "まるふわ 明朝2"
+    },
+    {
+      "id": "6abb5f406421ee0fc62ef9fc",
+      "name": "まるふわ 明朝3"
+    },
+    {
+      "id": "6abb5f476421ee0fc62ef9fd",
+      "name": "まるふわ 明朝4"
+    },
+    {
+      "id": "6abb5f029873e30db180c57e",
+      "name": "まるふわ 明朝5"
+    },
+    {
+      "id": "6abb5eb96421ee0fc62ef9e8",
+      "name": "まるふわ 明朝6"
+    },
+    {
+      "id": "6abb5f3e9873e30db180c586",
+      "name": "まるふわ 明朝8"
+    },
+    {
+      "id": "6abb5eddc427d714c65b6e55",
+      "name": "源氏香　１　朱色"
     }
   ]
 }
